@@ -1,0 +1,49 @@
+:root { font-family: Inter, "Segoe UI", "Microsoft YaHei", sans-serif; color: #243347; background: #f5f7fa; font-synthesis: none; }
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 960px; }
+button, input, textarea, select { font: inherit; }
+button { border: 1px solid #d3dce6; border-radius: 7px; padding: 9px 14px; background: white; color: #243347; cursor: pointer; }
+button:hover { background: #f0f5fc; }
+button:disabled { opacity: .55; cursor: wait; }
+button:focus-visible, textarea:focus, select:focus { outline: 2px solid #4b7bec; outline-offset: 2px; }
+header { min-height: 85px; padding: 18px 26px; display: flex; align-items: center; justify-content: space-between; background: #fff; border-bottom: 1px solid #e0e6ed; }
+h1 { font-size: 23px; margin: 0 0 5px; }
+header span, .muted { color: #697b90; font-size: 13px; }
+h2 { font-size: 15px; margin: 0 0 14px; }
+.toolbar { display: flex; gap: 10px; }
+.editor { display: grid; grid-template-columns: 200px minmax(0, 1fr) 270px; height: 58vh; min-height: 440px; border-bottom: 1px solid #e0e6ed; }
+.node-panel, .config-panel { padding: 22px 18px; background: #fff; overflow: auto; }
+.node-panel { border-right: 1px solid #e0e6ed; }
+.config-panel { border-left: 1px solid #e0e6ed; }
+.palette-node { border: 1px solid #dce3ec; border-left: 4px solid var(--accent); border-radius: 7px; margin: 12px 0; padding: 12px; cursor: grab; background: #fff; }
+.palette-node strong { display: block; font-size: 14px; }
+.palette-node code { display: block; font-size: 11px; color: #7a8a9b; margin-top: 4px; }
+.palette-node small { display: block; margin-top: 8px; font-size: 11px; color: #697b90; }
+.start { --accent: #18a77b; } .llm { --accent: #537de8; } .condition { --accent: #cc9228; } .end { --accent: #8c73bd; }
+.canvas { min-width: 0; height: 100%; background: #f7f9fc; }
+.workflow-node { width: 210px; padding: 14px; border: 1px solid #d3dce6; border-top: 4px solid var(--accent); border-radius: 9px; background: white; box-shadow: 0 3px 9px #24334709; }
+.workflow-node.selected { outline: 2px solid #4b7bec; outline-offset: 3px; }
+.node-heading { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+.node-heading strong { font-size: 14px; }
+.node-heading span { font-size: 10px; color: var(--accent); }
+.workflow-node code { display: block; margin-top: 8px; font-size: 12px; color: #64748b; }
+.workflow-node p { margin: 10px 0 0; font-size: 12px; color: #64748b; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.react-flow__handle { width: 10px; height: 10px; background: #64748b; border: 2px solid white; }
+.react-flow__edge.selected .react-flow__edge-path { stroke: #366bf0; stroke-width: 3; }
+.selection-id { overflow-wrap: anywhere; font-family: monospace; background: #f2f5fa; padding: 10px; border-radius: 5px; }
+label { display: block; font-size: 13px; font-weight: 600; }
+textarea, select { display: block; width: 100%; border: 1px solid #d3dce6; border-radius: 6px; padding: 10px; background: #fff; margin: 9px 0; color: #243347; }
+textarea { resize: vertical; line-height: 1.6; }
+small, .hint { color: #697b90; font-size: 12px; line-height: 1.8; font-weight: normal; }
+.hint { margin-top: 20px; }
+.danger { color: #bf4141; margin-top: 22px; }
+.execution { display: grid; grid-template-columns: 320px minmax(0, 1fr); gap: 24px; padding: 22px 26px; }
+.primary { background: #376fe8; color: white; border-color: #376fe8; }
+.primary:hover { background: #285dd2; }
+.output-panel { min-width: 0; }
+.output-panel h2 span { font-size: 11px; color: #8390a1; font-weight: normal; margin-left: 8px; }
+pre { white-space: pre-wrap; overflow-wrap: anywhere; margin: 0 0 8px; padding: 16px; border-radius: 7px; background: #eaf0f6; font-size: 12px; line-height: 1.7; max-height: 300px; overflow: auto; }
+.error { padding: 12px; margin-bottom: 10px; color: #a72e2e; background: #ffeded; border-radius: 6px; overflow-wrap: anywhere; }
+.dsl-panel { padding: 0 26px 24px; }
+.dsl-panel textarea { font-family: Consolas, monospace; font-size: 12px; }
+@media (max-width: 1100px) { .editor { grid-template-columns: 170px minmax(0, 1fr) 240px; } .node-panel, .config-panel { padding: 18px 12px; } }

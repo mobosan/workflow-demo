@@ -1,0 +1,16 @@
+{
+  "nodes": [
+    {"id": "start", "type": "start", "data": {}},
+    {"id": "llm_1", "type": "llm", "data": {"prompt_template": "总结：{{input}}"}},
+    {"id": "cond_1", "type": "condition", "data": {"expression": "len(llm_1) > 20"}},
+    {"id": "llm_long", "type": "llm", "data": {"prompt_template": "展开：{{llm_1.output}}"}},
+    {"id": "end", "type": "end", "data": {}}
+  ],
+  "edges": [
+    {"source": "start", "target": "llm_1"},
+    {"source": "llm_1", "target": "cond_1"},
+    {"source": "cond_1", "target": "llm_long", "condition": "true"},
+    {"source": "cond_1", "target": "end", "condition": "false"},
+    {"source": "llm_long", "target": "end"}
+  ]
+}
